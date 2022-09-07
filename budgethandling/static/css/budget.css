@@ -1,0 +1,290 @@
+a {
+    font-family: 'Open Sans';
+    color: #FF69B4;
+}
+
+a:hover {
+  color: #cc0066;
+}
+
+a:active {
+  color: #cc0066;
+}
+
+
+h1, h3 {
+    color: #FF69B4;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    line-height: 50px;
+    text-align: center;
+}
+
+h5 {
+    color: #FF69B4;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    line-height: 30px;
+}
+
+body {
+    padding: 40px 100px;
+    background-color: #FBCCD1;
+}
+
+h4{
+    font-family: 'Open Sans';
+    font-weight: 600;
+    line-height: 50px;
+    text-align: center;
+    margin: 15px 10px 10px 10px;
+    padding: 10px 22px;
+}
+
+/*----------------------------------------------KALENDARZ*/
+.historia{
+    text-align: center;
+    font-size: 12px;
+}
+
+.historia_naglowek{
+    margin: 40px 10px 70px 10px;
+}
+.addkategorie_naglowek{
+    margin: 40px 10px 0px 10px;
+}
+.przychody_naglowek{
+    margin: 40px 10px 0px 10px;
+}
+.wydatki_naglowek{
+    margin: 40px 10px 0px 10px;
+}
+
+.home_naglowek{
+    margin: 40px 10px 70px 10px;
+}
+.kategorie_naglowek{
+    margin: 40px 10px 0px 10px;
+}
+.wiecej_historia{
+    text-align: center;
+}
+
+.left {
+    float: left;
+    outline: none;
+    border: none;
+    color: black;
+    background-color: #FF69B4;
+    transition-duration: 0.2s;
+    margin: 15px 10px 10px 10px;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.right {
+    float: right;
+    outline: none;
+    border: none;
+    color: black;
+    background-color: #FF69B4;
+    transition-duration: 0.2s;
+    margin: 15px 10px 10px 10px;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+
+.history {
+    float: center;
+    outline: none;
+    border: none;
+    color: black;
+    background-color: #FF69B4;
+    transition-duration: 0.2s;
+    margin: 12px 10px 10px 10px;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.delete{
+    float: left;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    color: black;
+    background-color: #FF69B4;
+    transition-duration: 0.2s;
+    margin: 8px 8px 8px 8px;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    border-radius: 7px;
+}
+
+
+.button:hover {
+    background-color: #cc0066;
+    color: white;
+}
+.button:focus {
+    background-color: #cc0066;
+    color: white;
+    box-shadow: none;
+}
+
+.clearfix {
+  margin: 15px;
+}
+
+
+.calendar {
+  width: 98%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.calendar tr, .calendar td {
+  border: 1px solid black;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calendar td {
+  width: 00px;
+  height: 50px;
+  padding: 20px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+.history ul {
+  height: 100%;
+  padding: 0px 5px 0px 20px;
+}
+
+.history a {
+  color: #FBCCD1;
+}
+/*----------------------------------------------KALENDARZ*/
+
+
+
+/*tutaj sa napisy nad tabela w home*/
+
+
+
+.container{
+    width: auto;
+    height: auto;
+    background-color: #f0f0f0;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.menu{
+    background-color: #f0f0f0;
+    padding: 10px;
+    height: 70px;
+}
+
+.menu_home{
+    float: left;
+}
+
+.menu_functions{
+    float: right;
+}
+
+.budget_icon{
+    float: left;
+    padding: 5px;
+}
+.budget_icon img{
+    max-width:40px;
+}
+
+.budget_title{
+    font-weight: bold;
+    font-size: 32px;
+    font-family: 'Open Sans';
+    float: left;
+    padding: 5px;
+}
+
+a .budget_title {
+    color: #111;
+}
+a:visited .budget_title {
+    color: #111;
+}
+
+a:hover .budget_title {
+    text-shadow: 1px 1px 1px #000000;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.menu_functions li{
+    float: left;
+}
+
+.menu_functions li a {
+
+  display: block;
+  color: #555;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Change the link color to #111 (black) on hover */
+.menu_functions li a:hover {
+    color: #000;
+    font-size: 18px;
+}
+.menu_functions li a:visited {
+    color: #555;
+}
+.form_body{
+    padding: 50px;
+}
+
+.form_cell{
+    display: block;
+    padding: 14px 16px;
+}
+
+.form_cell label{
+    width: 100px;
+}

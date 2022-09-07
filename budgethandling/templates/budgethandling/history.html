@@ -1,0 +1,29 @@
+{% extends 'budgethandling/base.html' %}
+{% block content %}
+
+
+
+
+<div class="historia">
+    <div class="historia_naglowek">
+        <h1>Historia</h1>
+        <h3>Suma wydatków: -{{suma_wydatek}} zł    |    Suma przychodów: +{{suma_przychod}} zł</h3>
+    </div>
+
+	<a class="button left" href="{% url 'history' %}?{{ prev_month }}"> Poprzedni </a>
+	<a class="button right" href="{% url 'history' %}?{{ next_month }}"> Następny </a>
+
+    {{ calendar }}
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,23 @@
+{% extends 'budgethandling/base.html' %}
+{% block content %}
+
+
+<div class="addkategorie_naglowek">
+        <h1>Dodaj nową kategorię</h1>
+</div>
+
+        <div class="form_body">
+            <form action="/settings/" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                    <div class="fieldWrapper form_cell">
+                        {{ form.amount.errors }}
+                        <label for="{{ form.amount.id_for_label }}">Nazwa:</label>
+                        {{ form.name }}
+                    </div>
+                <input type="submit" value="OK">
+
+            </form>
+        </div>
+
+{% endblock %}

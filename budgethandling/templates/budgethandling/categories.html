@@ -1,0 +1,62 @@
+{% extends 'budgethandling/base.html' %}
+{% block content %}
+
+<div class="kategorie_naglowek">
+    <h1>Kategoria: {{category_name}}</h1>
+    <h3>Suma wydatków: {{suma}} zł</h3>
+</div>
+
+ <div class="form_body">
+        <form action="/history/{{category_nr}}/{{category_name}}/" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <h5>Zakres dat</h5>
+                    <div class="fieldWrapper form_cell">
+                        {{ form.date.errors }}
+                        <label for="{{ form.date.id_for_label }}">Data początkowa:</label>
+                        {{ form.startdate }}
+                    </div>
+                    <div class="fieldWrapper form_cell">
+                        {{ form.date.errors }}
+                        <label for="{{ form.date.id_for_label }}">Data końcowa:</label>
+                        {{ form.enddate }}
+                    </div>
+                <input type="submit" value="OK">
+            </div>
+        </form>
+</div>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Data</th>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Kategoria</th>
+            <th scope="col">Należność</th>
+            <th scope="col">Edycja</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for transaction in category_Transactions %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{transaction.date|date:"d.m.Y"}}</td>
+                <td>{{transaction.name}}</td>
+                <td>{{transaction.category}}</td>
+                {% if transaction.typek == -1 %}
+                    <td>-{{transaction.suma}}</td>
+                {% else %}
+                    <td>+{{transaction.suma}}</td>
+                {% endif %}
+                <td><a href="/delete_transaction/{{ transaction.id }}/">USUŃ</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock %}

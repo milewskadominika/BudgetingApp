@@ -1,0 +1,42 @@
+{% extends 'budgethandling/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="wykresy">
+        <h1>Zobacz swoje transakcje na wykresie</h1>
+    </div>
+
+
+    <div class="form_body">
+        <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                    <div class="fieldWrapper form_cell">
+                        {{ form.message.errors }}
+                        <label for="{{ form.message.id_for_label }}">Typ wykresu:</label>
+                        {{ form.plottype }}
+                    </div>
+                    <h5>Zakres dat</h5>
+                        <div class="fieldWrapper form_cell">
+                            {{ form.date.errors }}
+                            <label for="{{ form.date.id_for_label }}">Data początkowa:</label>
+                            {{ form.startdate }}
+                        </div>
+                        <div class="fieldWrapper form_cell">
+                            {{ form.date.errors }}
+                            <label for="{{ form.date.id_for_label }}">Data końcowa:</label>
+                            {{ form.enddate }}
+                        </div>
+                <input type="submit" value="OK">
+            </div>
+        </form>
+    </div>
+
+    <figure class="wykres">
+        {% if chart %}
+            <img src="data:image/png;base64, {{chart|safe}}" alt="" id="img">
+        {% endif %}
+    </figure>
+
+
+{% endblock content%}

@@ -1,0 +1,39 @@
+{% extends 'budgethandling/base.html' %}
+{% block content %}
+
+
+<div class="przychody_naglowek">
+        <h1>Dodaj przychód</h1>
+</div>
+
+    <div class="form_body">
+        <form action="/income/" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                    <div class="fieldWrapper form_cell">
+                        {{ form.amount.errors }}
+                        <label for="{{ form.amount.id_for_label }}">Nazwa przychodu:</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="fieldWrapper form_cell">
+                        {{ form.message.errors }}
+                        <label for="{{ form.message.id_for_label }}">Wartość:</label>
+                        {{ form.amount }}
+                    </div>
+                    <div class="fieldWrapper form_cell">
+                        {{ form.message.errors }}
+                        <label for="{{ form.message.id_for_label }}">Źródło:</label>
+                        {{ form.categories }}
+                    </div>
+                    <div class="fieldWrapper form_cell">
+                        {{ form.date.errors }}
+                        <label for="{{ form.date.id_for_label }}">Data:</label>
+                        {{ form.date }}
+                    </div>
+                <input type="submit" value="OK">
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

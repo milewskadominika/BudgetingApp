@@ -1,0 +1,68 @@
+{% extends 'budgethandling/base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="home_naglowek">
+        <h1>Witaj {{user.username}}</h1>
+        <h3>Saldo: {{ saldo }} zł</h3>
+</div>
+
+
+
+<h5>Ostatnie transakcje:</h5>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Data</th>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Kategoria</th>
+            <th scope="col">Należność</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% if transaction_list %}
+        {% for transaction in transaction_list %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{transaction.date|date:"d.m.Y"}}</td>
+                <td>{{transaction.name}}</td>
+                <td>{{transaction.category}}</td>
+                {% if transaction.typek == -1 %}
+                    <td>-{{transaction.suma}}</td>
+                {% else %}
+                    <td>+{{transaction.suma}}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td><b>Brak ostatnich transakcji.</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+    {% endif %}
+    </tbody>
+</table>
+
+<div class="wiecej_historia">
+    	<a class="button history" href=" /history "> więcej... </a>
+</div>
+
+
+
+
+{% else %}
+
+  <p>Nie jesteś zalogowany</p>
+  <a href="{% url 'login' %}">Zaloguj się</a>
+  <p>Nie masz konta? Zarejestruj się</p>
+  <a href="{% url 'register' %}">Załóż konto</a>
+{% endif %}
+
+{% endblock %}
+
